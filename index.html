@@ -1,256 +1,595 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    
-<div class="topnav" id="myTopnav">
-    <a href="#home" class="active">Let's Eat</a>
-    <a href="#about" class="right"><i class="fa fa-shopping-cart"></i> Cart</a>
-    <a href="#contact" class="right"><i class="fa fa-sign-in"></i> Sign In</a>
-    <a href="#news" id="e" class="right"><i class="fa fa-search"></i> Search</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Let's Eat</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav>
+      <a href="#" class="nav-logo">Let's<span>Eat</span></a>
+      <ul class="nav-links">
+        <li>
+          <a href="#categories"><i class="fa-solid fa-grid-2"></i> Menu</a>
+        </li>
+        <li>
+          <a href="#reserve"><i class="fa-solid fa-calendar"></i> Reserve</a>
+        </li>
+        <li>
+          <a href="#testimonials"><i class="fa-solid fa-star"></i> Reviews</a>
+        </li>
+        <li>
+          <a href="#" class="nav-cta"
+            ><i class="fa-solid fa-bag-shopping"></i> Order Now</a
+          >
+        </li>
+      </ul>
+      <button class="hamburger" id="hamburger">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+      <button class="mobile-close" id="mobileClose">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <a href="#categories" onclick="closeMobile()">Menu</a>
+      <a href="#reserve" onclick="closeMobile()">Reserve</a>
+      <a href="#testimonials" onclick="closeMobile()">Reviews</a>
+      <a href="#" onclick="closeMobile()">Order Now</a>
     </div>
-      <a href="#news" class="s" class="right"><i class="fa fa-search"></i> Search</a>
-      <h2>Isn't tricky to choose?</h2>
-      
-  <div class="carousel-container">
-    <div class="products" id="productContainer">
-      <!-- Images will be dynamically added here using JavaScript -->
-    </div>
-    <div class="arrows">
-      <button class="arrow arrow-left" onclick="scrollImages(-1)" id="leftArrow">&#10094;</button>
-      <button class="arrow arrow-right" onclick="scrollImages(1)" id="rightArrow">&#10095;</button>
-    </div>
-  </div>
 
-
-
-  <center><h2>Words from Our Happy Customers</h2></center>
-  <center>
-    <div class="testimonial">
-        <div class="slideshow-container">
-            <div class="mySlides fade">
-                <img src="https://b.zmtcdn.com/data/pictures/0/19998380/03e9cd96ece1975b4efaef39c8599808_o2_featured_v2.jpg" alt="Slide 1">
-            </div>
-
-            <div class="mySlides fade">
-                <img src="https://b.zmtcdn.com/data/dish_photos/347/e461212b85ef67ac7c9c07b0ccccd347.jpg" alt="Slide 2">
-            </div>
-
-            <div class="mySlides fade">
-                <img src="https://b.zmtcdn.com/data/dish_photos/31d/623ebe42751301d8ac83ded782e9d31d.jpg" alt="Slide 3">
-            </div>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-badge"><span></span> Now delivering in 30 mins</div>
+        <h1>Food that <em>feeds</em><br />your soul</h1>
+        <p class="hero-sub">
+          From your city's finest restaurants to your doorstep. Fresh, fast, and
+          crafted with passion.
+        </p>
+        <div class="hero-actions">
+          <a href="#categories" class="btn-primary"
+            ><i class="fa-solid fa-utensils"></i> Explore Menu</a
+          >
+          <a href="#reserve" class="btn-outline"
+            ><i class="fa-solid fa-calendar-check"></i> Book a Table</a
+          >
         </div>
-    </div>
-  </center>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-num">50+</span>
+            <span class="stat-label">Restaurants</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">4.9★</span>
+            <span class="stat-label">Avg Rating</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">30m</span>
+            <span class="stat-label">Delivery Time</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-img-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&auto=format&fit=crop"
+            alt="Delicious Food"
+          />
+        </div>
+        <div class="hero-float-card left">
+          <div class="float-icon orange">
+            <i
+              class="fa-solid fa-fire"
+              style="color: #e8531a; font-size: 14px"
+            ></i>
+          </div>
+          <div>
+            <div style="font-size: 0.75rem; color: #6b5b45; font-weight: 400">
+              Today's Special
+            </div>
+            <div>Hyderabadi Biryani</div>
+          </div>
+        </div>
+        <div class="hero-float-card top">
+          <div class="float-icon green">
+            <i
+              class="fa-solid fa-check"
+              style="color: #16a34a; font-size: 14px"
+            ></i>
+          </div>
+          <div>
+            <div style="font-size: 0.75rem; color: #6b5b45; font-weight: 400">
+              Just Ordered
+            </div>
+            <div>2 min ago</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<center><h2 class="heading">Reserve a Table</h2></center>
-  <div class="popular-loc">
-    <div class="seat" style="background-image:url('https://images.unsplash.com/photo-1599458252573-56ae36120de1?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
-      <!-- Your other content -->
-      <button class="book">Book Your food and Table</button>
-    </div>
-    <div class="seat" style="background-image:url('https://t3.ftcdn.net/jpg/02/54/04/58/360_F_254045845_JTRwArCF4fxHzValwEDNJAhCiml98zuH.jpg');">
-      <!-- Your other content -->
-      <button class="book">Review the Food</button>
-    </div>
-  </div>
+    <!-- CATEGORIES -->
+    <section class="categories-section" id="categories">
+      <div class="section-header fade-up">
+        <div class="section-label">What are you craving?</div>
+        <h2>Browse by Category</h2>
+        <p>
+          From spicy biryanis to sweet desserts — pick your mood and we'll
+          handle the rest.
+        </p>
+      </div>
+      <div class="categories-track-wrap">
+        <div class="categories-track" id="catsTrack">
+          <div class="cat-card active">
+            <img
+              class="cat-img"
+              src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1675667625/PC_Creative%20refresh/Biryani_2.png"
+              alt="Biryani"
+            />
+            <span class="cat-name">Biryani</span>
+          </div>
+          <div class="cat-card">
+            <img
+              class="cat-img"
+              src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029848/PC_Creative%20refresh/3D_bau/banners_new/Chinese.png"
+              alt="Chinese"
+            />
+            <span class="cat-name">Chinese</span>
+          </div>
+          <div class="cat-card">
+            <img
+              class="cat-img"
+              src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029843/PC_Creative%20refresh/3D_bau/banners_new/Juice.png"
+              alt="Juices"
+            />
+            <span class="cat-name">Juices</span>
+          </div>
+          <div class="cat-card">
+            <img
+              class="cat-img"
+              src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029858/PC_Creative%20refresh/3D_bau/banners_new/Rolls.png"
+              alt="Rolls"
+            />
+            <span class="cat-name">Rolls</span>
+          </div>
+          <div class="cat-card">
+            <img
+              class="cat-img"
+              src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029851/PC_Creative%20refresh/3D_bau/banners_new/Ice_Creams.png"
+              alt="Ice Cream"
+            />
+            <span class="cat-name">Ice Cream</span>
+          </div>
+          <div class="cat-card">
+            <img
+              class="cat-img"
+              src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029845/PC_Creative%20refresh/3D_bau/banners_new/Cakes.png"
+              alt="Cakes"
+            />
+            <span class="cat-name">Cakes</span>
+          </div>
+          <div class="cat-card">
+            <img
+              class="cat-img"
+              src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029850/PC_Creative%20refresh/3D_bau/banners_new/Dosa.png"
+              alt="Dosa"
+            />
+            <span class="cat-name">Dosa</span>
+          </div>
+          <div class="cat-card">
+            <img
+              class="cat-img"
+              src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029846/PC_Creative%20refresh/3D_bau/banners_new/Coffee.png"
+              alt="Coffee"
+            />
+            <span class="cat-name">Coffee</span>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-controls">
+        <button class="ctrl-btn" id="catLeft" onclick="scrollCat(-1)">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button class="ctrl-btn" id="catRight" onclick="scrollCat(1)">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+    </section>
 
+    <!-- MENU PICKS -->
+    <section class="menu-section" id="menu">
+      <div class="menu-inner">
+        <div class="section-header fade-up" style="margin-bottom: 3rem">
+          <div class="section-label" style="color: var(--orange-light)">
+            Our Best Sellers
+          </div>
+          <h2>Ready to Order</h2>
+          <p style="color: rgba(255, 255, 255, 0.5)">
+            Hand-picked dishes from our most-loved restaurants, available right
+            now.
+          </p>
+        </div>
+        <div class="menu-grid">
+          <div class="menu-card fade-up">
+            <img
+              class="menu-card-img"
+              src="https://b.zmtcdn.com/data/dish_photos/f15/78c348dc8fff642b657098f39b1dff15.jpg"
+              alt="Biryani"
+            />
+            <div class="menu-card-body">
+              <div class="menu-card-tag">Rice & More</div>
+              <div class="menu-card-title">Delicious Biryani</div>
+              <div class="menu-card-desc">
+                Aromatic long-grain basmati with whole spices, slow-cooked to
+                perfection.
+              </div>
+              <div class="menu-card-footer">
+                <span class="menu-price">₹280</span>
+                <button class="add-btn">
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="menu-card fade-up">
+            <img
+              class="menu-card-img"
+              src="https://b.zmtcdn.com/data/dish_photos/20a/d2b82bc09b0a3b00639995c8b9f6e20a.jpg"
+              alt="Cake"
+            />
+            <div class="menu-card-body">
+              <div class="menu-card-tag">Desserts</div>
+              <div class="menu-card-title">Black Velvet Cake</div>
+              <div class="menu-card-desc">
+                Rich, moist layers of cocoa-infused sponge with velvety cream
+                frosting.
+              </div>
+              <div class="menu-card-footer">
+                <span class="menu-price">₹349</span>
+                <button class="add-btn">
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="menu-card fade-up">
+            <img
+              class="menu-card-img"
+              src="https://b.zmtcdn.com/data/dish_photos/d63/459866913352ef2be7d03add85c97d63.jpg"
+              alt="Fries"
+            />
+            <div class="menu-card-body">
+              <div class="menu-card-tag">Snacks</div>
+              <div class="menu-card-title">Crispy French Fries</div>
+              <div class="menu-card-desc">
+                Golden, salted, perfectly crisp — the eternal crowd-pleaser, any
+                time of day.
+              </div>
+              <div class="menu-card-footer">
+                <span class="menu-price">₹129</span>
+                <button class="add-btn">
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="menu-card fade-up">
+            <img
+              class="menu-card-img"
+              src="https://b.zmtcdn.com/data/dish_photos/6b8/7e51068302c7a130aeb8b28c14d2e6b8.png"
+              alt="Dum Biryani"
+            />
+            <div class="menu-card-body">
+              <div class="menu-card-tag">Chef's Special</div>
+              <div class="menu-card-title">Dum Biryani</div>
+              <div class="menu-card-desc">
+                Sealed and slow-cooked in clay — the dum method locks in every
+                bit of flavour.
+              </div>
+              <div class="menu-card-footer">
+                <span class="menu-price">₹320</span>
+                <button class="add-btn">
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="menu-card fade-up">
+            <img
+              class="menu-card-img"
+              src="https://b.zmtcdn.com/data/dish_photos/499/612dd9c701280b9130700b5c68a1c499.jpg"
+              alt="Cherry Cake"
+            />
+            <div class="menu-card-body">
+              <div class="menu-card-tag">Nostalgia Bites</div>
+              <div class="menu-card-title">Childhood Cherry Cake</div>
+              <div class="menu-card-desc">
+                Soft vanilla sponge with sweet cherries — a classic that never
+                goes out of style.
+              </div>
+              <div class="menu-card-footer">
+                <span class="menu-price">₹299</span>
+                <button class="add-btn">
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="menu-card fade-up">
+            <img
+              class="menu-card-img"
+              src="https://b.zmtcdn.com/data/dish_photos/184/71131bdf3292f3c49d5fa845f9e0e184.jpg"
+              alt="Leg Pieces"
+            />
+            <div class="menu-card-body">
+              <div class="menu-card-tag">Grills & Meats</div>
+              <div class="menu-card-title">Spiced Leg Pieces</div>
+              <div class="menu-card-desc">
+                Succulent chicken legs marinated overnight and grilled over an
+                open flame.
+              </div>
+              <div class="menu-card-footer">
+                <span class="menu-price">₹249</span>
+                <button class="add-btn">
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- TESTIMONIALS -->
+    <section class="testimonials-section" id="testimonials">
+      <div class="testimonials-inner">
+        <div class="section-header fade-up">
+          <div class="section-label">Happy Customers</div>
+          <h2>They said it best</h2>
+        </div>
+        <div id="testimonialSlider">
+          <div class="testimonial-slide active">
+            <div class="testimonial-card">
+              <img
+                class="testimonial-img"
+                src="https://b.zmtcdn.com/data/pictures/0/19998380/03e9cd96ece1975b4efaef39c8599808_o2_featured_v2.jpg"
+                alt="Food"
+              />
+              <p class="testimonial-text">
+                "The biryani was extraordinary. Delivered hot in under 25
+                minutes — I'm genuinely impressed every single time."
+              </p>
+              <div class="testimonial-author">— Priya S., Hyderabad</div>
+            </div>
+          </div>
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <img
+                class="testimonial-img"
+                src="https://b.zmtcdn.com/data/dish_photos/347/e461212b85ef67ac7c9c07b0ccccd347.jpg"
+                alt="Food 2"
+              />
+              <p class="testimonial-text">
+                "Booked a table for our anniversary and the experience was
+                flawless. The team made everything feel special and effortless."
+              </p>
+              <div class="testimonial-author">— Arjun & Meena, Bengaluru</div>
+            </div>
+          </div>
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <img
+                class="testimonial-img"
+                src="https://b.zmtcdn.com/data/dish_photos/31d/623ebe42751301d8ac83ded782e9d31d.jpg"
+                alt="Food 3"
+              />
+              <p class="testimonial-text">
+                "Desserts deserve their own rating — five stars just isn't
+                enough. The velvet cake is criminally good."
+              </p>
+              <div class="testimonial-author">— Kavya R., Chennai</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-dots" id="dots">
+          <div class="dot active" onclick="goSlide(0)"></div>
+          <div class="dot" onclick="goSlide(1)"></div>
+          <div class="dot" onclick="goSlide(2)"></div>
+        </div>
+      </div>
+    </section>
 
+    <!-- RESERVE -->
+    <section class="reserve-section" id="reserve">
+      <div class="section-header fade-up">
+        <div class="section-label">Dine In</div>
+        <h2>Experience it in person</h2>
+        <p>
+          Reserve your seat or browse our menu — either way, the experience
+          starts here.
+        </p>
+      </div>
+      <div class="reserve-grid fade-up">
+        <div
+          class="reserve-card"
+          style="
+            background-image: url(&quot;https://images.unsplash.com/photo-1599458252573-56ae36120de1?q=80&w=900&auto=format&fit=crop&quot;);
+          "
+        >
+          <div class="reserve-content">
+            <span class="reserve-tag">Table Booking</span>
+            <div class="reserve-title">Reserve your seat tonight</div>
+            <div class="reserve-sub">
+              Available from 12:00 PM – 11:00 PM daily
+            </div>
+            <button class="reserve-btn">
+              Book a Table <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+        <div
+          class="reserve-card"
+          style="
+            background-image: url(&quot;https://t3.ftcdn.net/jpg/02/54/04/58/360_F_254045845_JTRwArCF4fxHzValwEDNJAhCiml98zuH.jpg&quot;);
+          "
+        >
+          <div class="reserve-content">
+            <span class="reserve-tag">Reviews</span>
+            <div class="reserve-title">Share your experience</div>
+            <div class="reserve-sub">
+              Loved a dish? Tell the world about it.
+            </div>
+            <button class="reserve-btn">
+              Write a Review <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <center><h2>Ready Aaaaa....</h2></center>
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div>
+            <div class="footer-brand-name">Let's<span>Eat</span></div>
+            <p class="footer-desc">
+              Fresh food from the city's finest restaurants — delivered with
+              love and speed.
+            </p>
+            <div class="footer-socials">
+              <a href="#" class="social-btn"
+                ><i class="fa-brands fa-facebook-f"></i
+              ></a>
+              <a href="#" class="social-btn"
+                ><i class="fa-brands fa-x-twitter"></i
+              ></a>
+              <a href="#" class="social-btn"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a href="#" class="social-btn"
+                ><i class="fa-brands fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Press</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Track Order</a></li>
+              <li><a href="#">Refund Policy</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <ul>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Cookie Policy</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>&copy; 2024 Let's Eat. All rights reserved.</span>
+          <span>Order from the best restaurants near you.</span>
+        </div>
+      </div>
+    </footer>
 
-  <div class="container">
-    <div class="column" id="column1"></div>
-    <div class="column" id="column2"></div>
-    <div class="column" id="column3"></div>
-</div>
+    <script>
+      let catIdx = 0;
+      const catsTrack = document.getElementById("catsTrack");
+      const catCards = catsTrack.querySelectorAll(".cat-card");
+      const catLeft = document.getElementById("catLeft");
+      const catRight = document.getElementById("catRight");
+      const visibleCount = () =>
+        window.innerWidth < 480 ? 2 : window.innerWidth < 768 ? 3 : 5;
 
-
-<footer class="swiggy-footer">
-  <div class="footer-links">
-      <a href="#">About Us</a>
-      <a href="#">Terms & Conditions</a>
-      <a href="#">Privacy Policy</a>
-      <a href="#">Contact Us</a>
-  </div>
-  <div class="footer-social">
-      <a href="#"><i class="fa fa-facebook"></i></a>
-      <a href="#"><i class="fa fa-twitter"></i></a>
-      <a href="#"><i class="fa fa-instagram"></i></a>
-      <a href="#"><i class="fa fa-linkedin"></i></a>
-  </div>
-  <div class="footer-info">
-      <p>&copy; 2024 Let's Eat. All rights reserved.</p>
-      <p>Order food online from the our restaurants near you.</p>
-  </div>
-</footer>
-
-  <script>
-    const imageUrls = [
-    
-    
-    'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1675667625/PC_Creative%20refresh/Biryani_2.png',
-    'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029848/PC_Creative%20refresh/3D_bau/banners_new/Chinese.png', 
-    'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029843/PC_Creative%20refresh/3D_bau/banners_new/Juice.png', 
-    'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029858/PC_Creative%20refresh/3D_bau/banners_new/Rolls.png', 
-    'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029851/PC_Creative%20refresh/3D_bau/banners_new/Ice_Creams.png',
-
-    'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029845/PC_Creative%20refresh/3D_bau/banners_new/Cakes.png',
-    'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029853/PC_Creative%20refresh/3D_bau/banners_new/Parotta.png', 
-    'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029850/PC_Creative%20refresh/3D_bau/banners_new/Dosa.png', 
-    'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029853/PC_Creative%20refresh/3D_bau/banners_new/Paratha.png', 
-    'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029846/PC_Creative%20refresh/3D_bau/banners_new/Coffee.png'
-  ];
-
-  const productContainer = document.getElementById('productContainer');
-  const products = document.querySelector('.products');
-  const leftArrow = document.getElementById('leftArrow');
-  const rightArrow = document.getElementById('rightArrow');
-  let currentIndex = 0;
-
-  function createImage(url, index) {
-    const img = document.createElement('img');
-    img.src = url;
-    img.alt = `Product ${index + 1}`;
-    img.classList.add('mainimages');
-    products.appendChild(img);
-  }
-
-  function scrollImages(direction) {
-    const imageWidth = document.querySelector('.mainimages').offsetWidth + 2 * 1.5;
-    currentIndex += direction;
-    const translateValue = -currentIndex * imageWidth;
-    products.style.transform = `translateX(${translateValue}px)`;
-    updateArrows();
-  }
-
-  function updateArrows() {
-    leftArrow.disabled = currentIndex === 0;
-    rightArrow.disabled = currentIndex >= imageUrls.length - 5;
-  }
-
-  // Create initial set of images
-  imageUrls.forEach(createImage);
-  updateArrows();
-
-
-
-  var slideIndex = 0;
-  showSlides();
-  
-  function showSlides() {
-      var i;
-      var slides = document.getElementsByClassName("mySlides");
-      for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
+      function scrollCat(dir) {
+        const max = Math.max(0, catCards.length - visibleCount());
+        catIdx = Math.max(0, Math.min(catIdx + dir, max));
+        const w = catCards[0].offsetWidth + 16;
+        catsTrack.style.transform = `translateX(-${catIdx * w}px)`;
+        catLeft.disabled = catIdx === 0;
+        catRight.disabled = catIdx >= max;
       }
-      slideIndex++;
-      if (slideIndex > slides.length) { slideIndex = 1 }
-      slides[slideIndex - 1].style.display = "block";
-      setTimeout(showSlides, 2000); // Change slide every 2 seconds (adjust as needed)
-  }
-  
 
+      catCards.forEach((c) =>
+        c.addEventListener("click", () => {
+          catCards.forEach((x) => x.classList.remove("active"));
+          c.classList.add("active");
+        }),
+      );
 
+      catLeft.disabled = true;
 
-  const imageUrls1 = [
-  'https://b.zmtcdn.com/data/dish_photos/f15/78c348dc8fff642b657098f39b1dff15.jpg',
-  'https://b.zmtcdn.com/data/dish_photos/6b8/7e51068302c7a130aeb8b28c14d2e6b8.png',
-  'https://b.zmtcdn.com/data/dish_photos/f4c/869e36f525b9b5a6094d797d2f129f4c.jpg'
-]; // Array of image URLs for column 1
-const imageUrls2 = [
-  'https://b.zmtcdn.com/data/dish_photos/20a/d2b82bc09b0a3b00639995c8b9f6e20a.jpg',
-  'https://b.zmtcdn.com/data/dish_photos/499/612dd9c701280b9130700b5c68a1c499.jpg',
-  'https://b.zmtcdn.com/data/dish_photos/bd7/7f165f4656a5c4165c7927e15dabdbd7.jpg'
-];
+      let slideIdx = 0;
+      const slides = document.querySelectorAll(".testimonial-slide");
+      const dots = document.querySelectorAll(".dot");
 
-const imageUrls3 = [
-  'https://b.zmtcdn.com/data/dish_photos/d63/459866913352ef2be7d03add85c97d63.jpg',
-  'https://b.zmtcdn.com/data/dish_photos/d6d/5ae08177c57a5c808adeb1b2e8867d6d.jpg',
-  'https://b.zmtcdn.com/data/dish_photos/184/71131bdf3292f3c49d5fa845f9e0e184.jpg'
-];
+      function goSlide(n) {
+        slides[slideIdx].classList.remove("active");
+        dots[slideIdx].classList.remove("active");
+        slideIdx = n;
+        slides[slideIdx].classList.add("active");
+        dots[slideIdx].classList.add("active");
+      }
 
-const column1 = document.getElementById('column1');
-const column2 = document.getElementById('column2');
-const column3 = document.getElementById('column3');
+      let autoSlide = setInterval(
+        () => goSlide((slideIdx + 1) % slides.length),
+        3500,
+      );
 
-function createCard(container, imageUrl, title, text) {
-  const card = document.createElement('div');
-  card.classList.add('custom-card');
+      const hamburger = document.getElementById("hamburger");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const mobileClose = document.getElementById("mobileClose");
 
-  const img = document.createElement('img');
-  img.src = imageUrl;
-  img.alt = 'Card Image';
-  img.classList.add('card-img-top');
+      hamburger.addEventListener("click", () =>
+        mobileMenu.classList.add("open"),
+      );
+      mobileClose.addEventListener("click", () =>
+        mobileMenu.classList.remove("open"),
+      );
+      function closeMobile() {
+        mobileMenu.classList.remove("open");
+      }
 
-  const cardBody = document.createElement('div');
-  cardBody.classList.add('card-body');
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("visible");
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
 
-  const cardTitle = document.createElement('h5');
-  cardTitle.classList.add('card-title');
-  cardTitle.textContent = title;
-
-  const cardText = document.createElement('p');
-  cardText.classList.add('card-text');
-  cardText.textContent = text;
-
-  cardBody.appendChild(cardTitle);
-  cardBody.appendChild(cardText);
-
-  card.appendChild(img);
-  card.appendChild(cardBody);
-
-  container.appendChild(card);
-}
-
-// Example titles and texts for each column
-const titlesColumn1 = ['Delicious Biryani', 'Dum Biryani', 'Leg Piece Biryani'];
-
-const textsColumn1 = [
-  'Enjoy our flavorful biryani with a mix of aromatic spices.',
-  'Dum is always special to Eat Let me try it once again',
-  'Succulent chicken legs paired with aromatic rice.'
-];
-
-const titlesColumn2 = ['Valvet', 'Cherry Cake', 'Red Velvet'];
-
-const textsColumn2 = [
-  'Black Valvet,Rich, decadent desserts for indulgence.',
-  'Childhood Cherry is back i want it right now',
-  'Red Valvet,Rich, decadent desserts for indulgence.'
-];
-
-
-const titlesColumn3 = ['French Frice', 'Starters', 'Leg Pieces'];
-
-const textsColumn3 = [
-  'Perfect for snacking or side dishes',
-  'The kickstart your meal with tantalizing flavors',
-  'Succulent cuts of meat, perfect for hearty meals'
-];
-
-// Create cards for each column
-titlesColumn1.forEach((title, index) => {
-  createCard(column1, imageUrls1[index], title, textsColumn1[index]);
-});
-
-titlesColumn2.forEach((title, index) => {
-  createCard(column2, imageUrls2[index], title, textsColumn2[index]);
-});
-
-
-titlesColumn3.forEach((title, index) => {
-  createCard(column3, imageUrls3[index], title, textsColumn3[index]);
-});
-
-</script>
-</body>
+      document
+        .querySelectorAll(".fade-up")
+        .forEach((el) => observer.observe(el));
+    </script>
+  </body>
 </html>
